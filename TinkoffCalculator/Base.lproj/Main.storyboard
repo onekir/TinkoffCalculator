@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,9 +231,13 @@
                             <constraint firstItem="qSM-z0-eQT" firstAttribute="bottom" secondItem="LD4-9u-ZyH" secondAttribute="top" id="3cn-fC-2rF"/>
                             <constraint firstItem="CjF-Fa-nLj" firstAttribute="bottom" secondItem="ZWd-tK-KZ8" secondAttribute="top" id="6F7-Mp-I69"/>
                             <constraint firstItem="Csj-ik-bUm" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="6N9-Pw-puz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZWd-tK-KZ8" secondAttribute="trailing" id="8EH-1s-MSr"/>
                             <constraint firstItem="jlk-DH-GlZ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="9x4-ko-g3H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Pz-7G-oTZ" secondAttribute="bottom" id="Ciw-BQ-xB3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BDc-TD-axD" secondAttribute="trailing" id="DeO-Jy-6dT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jlk-DH-GlZ" secondAttribute="trailing" id="Dqe-MD-U6e"/>
                             <constraint firstItem="2ut-di-eGc" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="FAp-Tp-HOL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CjF-Fa-nLj" secondAttribute="trailing" id="I3u-I3-rK7"/>
                             <constraint firstItem="Csj-ik-bUm" firstAttribute="bottom" secondItem="2ut-di-eGc" secondAttribute="top" id="JGi-Bj-rkW"/>
                             <constraint firstItem="iq1-Pr-una" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="JMl-FY-C4e"/>
                             <constraint firstItem="A7D-Hq-6MN" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="K2H-ya-cRe"/>
@@ -266,6 +270,7 @@
                             <constraint firstItem="2ut-di-eGc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eeu-2v-Nof"/>
                             <constraint firstItem="Ub9-xD-aSs" firstAttribute="bottom" secondItem="D8W-N3-qbn" secondAttribute="top" id="fZI-zT-EvF"/>
                             <constraint firstItem="LD4-9u-ZyH" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="feI-7i-TcZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Pz-7G-oTZ" secondAttribute="trailing" id="g9V-UY-rxn"/>
                             <constraint firstItem="iq1-Pr-una" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="gMR-tn-JpR"/>
                             <constraint firstItem="BDc-TD-axD" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="gbm-ya-iXU"/>
                             <constraint firstItem="A7D-Hq-6MN" firstAttribute="leading" secondItem="Lxr-y7-ivE" secondAttribute="trailing" id="hVF-ld-iSx"/>

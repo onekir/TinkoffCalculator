@@ -44,6 +44,27 @@ enum CalculationHistoryItem {
 
 class ViewController: UIViewController {
     
+    var calculationHistory: [CalculationHistoryItem] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        resetLabelText()
+    }
+    
+    lazy var numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.usesGroupingSeparator = false
+        numberFormatter.locale = Locale(identifier: "ru_RU")
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter
+    }()
+    
+    @IBOutlet weak var label: UILabel!
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
         
@@ -62,12 +83,12 @@ class ViewController: UIViewController {
         guard
             let buttonText = sender.currentTitle,
             let buttonOperation = Operation(rawValue: buttonText)
-        else { return }
+            else { return }
         
         guard
             let labelText = label.text,
             let labelNumber = numberFormatter.number(from: labelText)?.doubleValue
-        else { return }
+            else { return }
         
         calculationHistory.append(.number(labelNumber))
         calculationHistory.append(.operation(buttonOperation))
@@ -77,6 +98,7 @@ class ViewController: UIViewController {
     
     @IBAction func cleanButtonPressed(_ sender: UIButton) {
         calculationHistory.removeAll()
+        
         resetLabelText()
     }
     
@@ -84,37 +106,19 @@ class ViewController: UIViewController {
         guard
             let labelText = label.text,
             let labelNumber = numberFormatter.number(from: labelText)?.doubleValue
-        else { return }
+            else { return }
         
         calculationHistory.append(.number(labelNumber))
         
         do {
             let result = try calculate()
+            
             label.text = numberFormatter.string(from: NSNumber(value: result))
         } catch {
             label.text = "Ошибка"
         }
         
         calculationHistory.removeAll()
-    }
-    
-    @IBOutlet weak var label: UILabel!
-    
-    var calculationHistory: [CalculationHistoryItem] = []
-    
-    lazy var numberFormatter: NumberFormatter = {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.usesGroupingSeparator = false
-        numberFormatter.locale = Locale(identifier: "ru_RU")
-        numberFormatter.numberStyle = .decimal
-        return numberFormatter
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        resetLabelText()
     }
     
     func calculate() throws -> Double {
@@ -126,7 +130,7 @@ class ViewController: UIViewController {
             guard
                 case .operation(let operation) = calculationHistory[index],
                 case .number(let number) = calculationHistory[index + 1]
-            else { break }
+                else { break }
             
             currentResult = try operation.calculate(currentResult, number)
         }
@@ -137,7 +141,4 @@ class ViewController: UIViewController {
     func resetLabelText() {
         label.text = "0"
     }
-    
-    
 }
-
